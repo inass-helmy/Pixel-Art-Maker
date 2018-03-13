@@ -75,8 +75,7 @@ function coloring(color) {
 //clear cells by clicking on the clear cell button
 $(clearCell).on("click", function(event) {
     event.preventDefault();
-    $(tableCanva).css("background-color", "white");
-});
+	$('td').css("background-color", "white");});
 
 
 // generate a random color
@@ -95,10 +94,4 @@ function randomColor() {
 function defaul() {
 
     coloring(pickedColor.val());
-} // This is just a sample script. Paste your real code (javascript or HTML) here.
-
-if ('this_is' == /an_example/) {
-    of_beautifier();
-} else {
-    var a = b ? (c % d) : e[f];
-}
+} 
