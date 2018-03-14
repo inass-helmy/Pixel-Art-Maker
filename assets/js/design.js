@@ -1,5 +1,7 @@
 // Select color input
 const pickedColor = $("#colorPicker");
+const randomPicker = $("#randomPicker");
+
 // Select size input, sybmit and reset buttons
 const sizeInput = $("#sizePicker");
 const submitButton = $("input[type='submit']");
@@ -9,8 +11,6 @@ const tableCanva = $("#pixelCanvas");
 const height = $("#inputHeight");
 const width = $("#inputWeight");
 const clearCell = $("#clearCell");
-defaul();
-
 
 // When size is submitted by the user, call makeGrid()
 $(submitButton).on("click", function(event) {
@@ -33,13 +33,14 @@ function makeGrid(colNO, rowNo) {
             tableCanva.append(row)
         }
     } else alert("The maximum input number is 100, please try again.");
+    coloring(pickedColor.val());
 
 }
 //reset button to reset the input values and clear the grid
 $(resetButton).on("click", function() {
 
     tableCanva.empty();
-    $("#randomPicker").css("background-color", "#faebd7");
+    $(randomPicker).css("background-color", "#faebd7");
 
 
 });
@@ -52,7 +53,7 @@ $(pickedColor).change(function() {
 
 //draw with a random color
 
-$("#randomPicker").on("click", function() {
+$(randomPicker).on("click", function() {
     let random = randomColor();
     $(this).css("background-color", random);
 
@@ -87,11 +88,5 @@ function randomColor() {
     //pick a "blue" from 0 -255
     const b = Math.floor(Math.random() * 256);
 
-    return "rgb(" + r + ", " + g + ", " + b + ")";
-
+   return "rgb(" + r + ", " + g + ", " + b + ")";
 }
-
-function defaul() {
-
-    coloring(pickedColor.val());
-} 
