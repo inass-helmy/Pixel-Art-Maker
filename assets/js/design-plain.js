@@ -69,15 +69,15 @@ function coloring(color) {
     tableCanva.style.backgroundColor = "white";
     let td = tableCanva.getElementsByTagName("td");
 
-//color the cell on click and erase color on double click
-    for (let i = 0; i < td.length; i++) { 
-        td[i].onclick =  function() {
-        td[i].style.background = color;
-    };
-    td[i].ondblclick =  function() {
-        td[i].style.background = "white";
-    };
-}
+    //color the cell on click and erase color on double click
+    for (let i = 0; i < td.length; i++) {
+        td[i].onclick = function() {
+            td[i].style.background = color;
+        };
+        td[i].ondblclick = function() {
+            td[i].style.background = "white";
+        };
+    }
 
 }
 
@@ -85,8 +85,8 @@ function coloring(color) {
 clearCell.addEventListener("click", function(event) {
     event.preventDefault();
     let td = tableCanva.getElementsByTagName("td");
-	for(var i=0; i<=td.length; i++){
-          td[i].style.background = "white";
+    for (var i = 0; i <= td.length; i++) {
+        td[i].style.background = "white";
     }
 });
 
