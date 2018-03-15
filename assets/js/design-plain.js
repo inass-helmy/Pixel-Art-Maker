@@ -84,14 +84,12 @@ function coloring(color) {
 //clear cells by clicking on the clear cells button
 clearCell.addEventListener("click", function(event) {
     event.preventDefault();
-    if(document.getElementsByTagName("td")){
       let td = tableCanva.getElementsByTagName("td");
 
-    for (var i = 0; i <= td.length; i++) {
+    for (var i = 0; i <= td.length-1; i++) {
         td[i].style.background = "white";
     }  
-    }
-    
+ 
 });
 
 
